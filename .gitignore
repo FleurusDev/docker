@@ -1,4 +1,4 @@
-sites/
-database*/
+sites/*
+database*/*
 backupsql1/backup/*
 backupsql1/*.*
