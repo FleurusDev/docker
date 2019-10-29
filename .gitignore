@@ -1,0 +1,4 @@
+sites/
+database*/
+backupsql1/backup/*
+backupsql1/*.*

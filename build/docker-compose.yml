@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+        db1:
+                build: ./maria
+                container_name: mariadb1
+                restart: always
+                ports:
+                        - 3306:3306
+                volumes:
+                        - ../database1:/var/lib/mysql
+                        - ../backupsql1:/var/lib/backup
+
+        php:
+                build: ./php
+                container_name: phpapi
+                restart: always
+                ports:
+                        - 9000:9000
+                volumes:
+                        - ../sites:/var/www/html/APImobile/public
+        apache:
+                build: ./apache
+                container_name: apacheapi
+                restart: always
+                ports:
+                        - 80:80
+                volumes:                         
+                        - ../sites:/var/www/html/APIMobile/public
+                depends_on:
+                        - php       
