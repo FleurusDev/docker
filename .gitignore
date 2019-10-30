@@ -5,7 +5,7 @@ database?/inventaire
 database?/exploitation
 database?/archives
 
-backupsql?/backup/*.*
-backupsql?/*.*
+backupsql?/backup/*.sql
+backupsql?/*.tar
 
-sites/*
+sites/APIMobile
