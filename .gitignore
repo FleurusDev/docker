@@ -1,0 +1,11 @@
+/database?/gpwmaro_prod
+/database?/maro_etude
+/database?/mbmgpao
+/database?/inventaire
+/database?/exploitation
+/database?/archives
+
+/backupsql?/backup/*
+/backupsql?/*.*
+
+/sites/*
