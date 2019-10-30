@@ -5,7 +5,7 @@ database?/inventaire
 database?/exploitation
 database?/archives
 
-backupsql?/backup/*
+backupsql?/backup/*.*
 backupsql?/*.*
 
 sites/*
