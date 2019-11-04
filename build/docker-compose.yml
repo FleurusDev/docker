@@ -5,11 +5,28 @@ services:
                 container_name: mariadb1
                 restart: always
                 ports:
-                        - 3306:3306
+                        - 4001:3306
                 volumes:
                         - ../database1:/var/lib/mysql
                         - ../backupsql1:/var/lib/backup
-
+                command: mysqld --log-bin=mariadb-bin --binlog-format=ROW --server-id=3000
+        db2:
+                build: ./maria
+                container_name: mariadb2
+                restart: always
+                ports:
+                        - 4002:3306
+                volumes:
+                        - ../database2:/var/lib/mysql
+                command: mysqld --log-bin=mariadb-bin --binlog-format=ROW --server-id=3001 --log-slave-updates
+        mscale:
+                build: ./maxscale
+                container_name: maxscale
+                restart: always
+                ports:
+                        - 4006:4006
+                        - 4008:4008
+                        - 8989:8989
         php:
                 build: ./php
                 container_name: phpapi
