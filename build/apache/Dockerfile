@@ -157,9 +157,9 @@ RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 STOPSIGNAL WINCH
 
 COPY httpd-foreground /usr/local/bin/
-COPY ./vhosts/apimobile.conf /usr/local/apache2/conf/
-RUN echo "Include /usr/local/apache2/conf/apimobile.conf" \
-    >> /usr/local/apache2/conf/httpd.conf
+#COPY ./vhosts/apimobile.conf /usr/local/apache2/conf/
+#RUN echo "Include /usr/local/apache2/conf/apimobile.conf" \
+#    >> /usr/local/apache2/conf/httpd.conf
 WORKDIR /var/www/html
 
 #RUN a2ensite apimobile.conf
