@@ -34,7 +34,7 @@ services:
                 ports:
                         - 9000:9000
                 volumes:
-                        - ../sites:/var/www/html/APImobile/public
+                        - ../sites:/var/www/html/
         apache:
                 build: ./apache
                 container_name: apacheapi
@@ -42,6 +42,7 @@ services:
                 ports:
                         - 80:80
                 volumes:                         
-                        - ../sites:/var/www/html/APIMobile/public
+                        - ../sites:/var/www/html/
+                        - ../apache.conf:/usr/local/apache2/conf/
                 depends_on:
                         - php       
