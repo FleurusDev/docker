@@ -5,11 +5,6 @@ database?/inventaire
 database?/exploitation
 database?/archives
 database?/mysql
-database?/ib*
-database?/aria*
-database?/*.info
-database?/*.flag
-database?/*.state
 
 backupsql?/backup/*.sql
 backupsql?/*.tar
