@@ -16,4 +16,5 @@ database?/aria*
 database?/*.info
 database?/*.flag
 database?/*.state
-
+database?/*.pid
+database?/mysql_upgrade_info
