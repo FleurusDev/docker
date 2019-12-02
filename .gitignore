@@ -9,3 +9,9 @@ backupsql?/backup/*.sql
 backupsql?/*.tar
 
 sites/APIMobile
+
+database?/ib*
+database?/aria*
+database?/*.info
+database?/*.flag
+database?/*.state
