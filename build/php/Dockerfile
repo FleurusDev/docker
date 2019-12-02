@@ -59,7 +59,7 @@ RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
 RUN docker-php-ext-enable opcache
 COPY php-fpm-pool.conf /usr/local/etc/php-fpm.d/www.conf
 
-COPY php.ini /usr/local/etc/php/
+#COPY php.ini /usr/local/etc/php/
 
 RUN groupadd dev -g 999
 RUN useradd dev -g dev -d /home/dev -m
@@ -67,6 +67,8 @@ RUN useradd dev -g dev -d /home/dev -m
 # mise à l'heure
 RUN unlink /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
+RUN ln -s /var/www/html/configs/php.ini /usr/local/etc/php/php.ini
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs

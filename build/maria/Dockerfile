@@ -126,10 +126,14 @@ RUN mkdir /var/lib/backup
 RUN unlink /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
+RUN rm -f /etc/mysql/my.cnf
+RUN ln -s /var/www/html/configs/my.cnf /etc/mysql/my.cnf
+
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
 
-COPY my.cnf /etc/mysql/
+
+#COPY my.cnf /etc/mysql/
 
 RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]

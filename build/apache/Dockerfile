@@ -150,6 +150,11 @@ RUN set -eux; \
 RUN unlink /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
+RUN rm -f /usr/local/apache2/conf/httpd.conf
+RUN ln -s /var/www/html/configs/httpd.conf /usr/local/apache2/conf/httpd.conf
+RUN ln -s /var/www/html/sites.conf /usr/local/apache2/conf/sites.conf
+
+
 # Augmentation du Timeout apache
 #RUN sed -i 's/Timeout 300/Timeout 3600/' etc/apache2/apache2.conf
 

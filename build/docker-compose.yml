@@ -9,6 +9,7 @@ services:
                 volumes:
                         - ../database1:/var/lib/mysql
                         - ../backupsql1:/var/lib/backup
+                        - ../sites:/var/local
 
         php:
                 build: ./php
@@ -26,6 +27,5 @@ services:
                         - 80:80
                 volumes:                         
                         - ../sites:/var/www/html/
-                        - ../apache.conf:/usr/local/apache2/conf/
                 depends_on:
                         - php       
