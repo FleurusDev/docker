@@ -4,12 +4,14 @@ database?/mbmgpao
 database?/inventaire
 database?/exploitation
 database?/archives
+database?/inventaire2019
 database?/mysql
 
 backupsql?/backup/*.sql
 backupsql?/*.tar
 
 sites/APIMobile
+sites/Inventaire2019
 
 database?/ib*
 database?/aria*

@@ -127,7 +127,7 @@ RUN unlink /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 RUN rm -f /etc/mysql/my.cnf
-RUN ln -s /var/www/html/configs/my.cnf /etc/mysql/my.cnf
+RUN ln -s /var/local/configs/my.cnf /etc/mysql/my.cnf
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
